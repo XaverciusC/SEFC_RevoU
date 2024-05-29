@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Belajar</title>
+    <style> 
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center" >
+        Form Belajar
+    </h1>
+    <p style="text-align:center">
+        Ini adalah latihan pertama
+    </p>
+    <form id="myForm" onsubmit="submitForm(event)">
+        <fieldset>
+            <legend>Data diri</legend>
+            <label for="nama">Nama :</label>
+            <br>
+            <input type="text" id="nama" style="width:100%">
+            <br/>
+            <br/>
+            <label for="ttl">Tempat Lahir :</label>
+            <br>
+            <input type="text" id="ttl" style="width:100%">
+            <br/>
+            <br/>
+            <label>Jenis Kelamin :</label>
+            <br>
+            <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki">
+            <label for="laki-laki">Laki-laki</label>
+            <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan">
+            <label for="perempuan">Perempuan</label>
+            <br>
+            <br/>
+            <label for="why">Saran :</label>
+            <br>
+            <textarea id="why" rows="8" cols="64" style="width:100%"></textarea>
+            <br>
+            <br>
+            <input type="submit" value="Submit" style="width:100%">
+        </fieldset>
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get form data
+            var nama = document.getElementById("nama").value;
+            var ttl = document.getElementById("ttl").value;
+            var jenisKelamin = document.querySelector('input[name="jenis-kelamin"]:checked').value;
+            var saran = document.getElementById("why").value;
+
+            // Get existing data from localStorage or initialize as an empty array
+            var formDataArray = JSON.parse(localStorage.getItem("formData")) || [];
+
+            // Push new form data into the array
+            formDataArray.push({
+                nama: nama,
+                ttl: ttl,
+                jenisKelamin: jenisKelamin,
+                saran: saran
+            });
+
+            // Store the updated array back into localStorage
+            localStorage.setItem("formData", JSON.stringify(formDataArray));
+
+            // Redirect to another page
+            window.location.href = "tabledata.html";
+        }
+    </script>
+
+</body>
+</html>
