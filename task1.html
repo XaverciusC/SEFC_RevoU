@@ -5,6 +5,15 @@
         <title>Task 1 Web Desihgn</title>
 
         <style>
+            html, body {
+                height: 100%;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                font-family: Arial, sans-serif;
+            }
+
             .navigation {
                 display: flex;
                 border: 2px solid #6b6b6b;
@@ -47,6 +56,7 @@
             }
 
             main {
+                flex: 1;
                 display: flex;
                 flex-direction: row;
             }
@@ -86,62 +96,93 @@
                 border: 1px solid #ccc;
                 border-radius: 3px;
             }
+
+            input[type="submit"] {
+                background-color: rgb(255, 230, 0);
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: rgb(179, 161, 0);
+            }
+
+            footer {
+                background:linear-gradient(90deg,grey,rgb(255, 230, 0));
+                color: rgb(0, 0, 0);
+                text-align: right;
+                border: 2px solid #6b6b6b;
+                margin: 2px;
+            }
+
+            .ftr {
+                margin-right:20px;
+            }
+
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
         </style>
 
     </head>
 
     <body>
-        <nav class="navigation">
-            <div class="pic">
-                <img src="img/image-removebg-preview - 2023-12-17T214554.796.png" alt="n3" width="40" height="20">
-            </div>
-            <div class="home">Home</div>
-            <div class="search">Search</div>
-            <div class="logout">Logout</div>
-        </nav>
+        <div class="wrapper">
+            <nav class="navigation">
+                <div class="pic">
+                    <img src="img/image-removebg-preview - 2023-12-17T214554.796.png" alt="n3" width="40" height="20">
+                </div>
+                <div class="home">Home</div>
+                <div class="search">Search</div>
+                <div class="logout">Logout</div>
+            </nav>
 
-        <h1>Form Belajar</h1>
-        <p>Ini adalah website latihan pertama</p>
+            <h1>Form Belajar</h1>
+            <p>Ini adalah website latihan pertama</p>
 
-        <main>
-            <div class="forms">
-                <form class="formcss">
+            <main>
+                <div class="forms">
+                    <form class="formcss">
 
-                    <div class="namacss">
-                        <label for="nama">Nama</label><span>:</span>
-                        <input type="text" id="nama">
-                    </div>
+                        <div class="namacss">
+                            <label for="nama">Nama</label><span>:</span>
+                            <input type="text" id="nama">
+                        </div>
 
-                    <div class="namacss">
-                        <label for="ttl">Tanggal Lahir</label><span>:</span>
-                        <input type="date" id="ttl">
-                    </div>
-                    
-                    <div class="namacss">
-                        <label>Jenis Kelamin</label><span>:</span>
-                        <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki">
-                        <label for="laki-laki">Laki-laki</label>
-                        <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan">
-                        <label for="perempuan">Perempuan</label>
-                    </div>  
+                        <div class="namacss">
+                            <label for="ttl">Tanggal Lahir</label><span>:</span>
+                            <input type="date" id="ttl">
+                        </div>
+                        
+                        <div class="namacss">
+                            <label>Jenis Kelamin</label><span>:</span>
+                            <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki">
+                            <label for="laki-laki">Laki-laki</label>
+                            <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan">
+                            <label for="perempuan">Perempuan</label>
+                        </div>  
 
-                    <div class="namacss">
-                        <label for="why">Saran</label><span>:</span>
-                        <textarea id="why" rows="8" cols="64"></textarea>
-                    </div>
+                        <div class="namacss">
+                            <label for="why">Saran</label><span>:</span>
+                            <textarea id="why" rows="8" cols="64"></textarea>
+                        </div>
 
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
 
-            <div class="tbl">
-                <p>table</p>
-            </div>
-        </main>
+                <div class="tbl">
+                    <p>table</p>
+                </div>
+            </main>
 
-        <footer>
-
-        </footer>
+            <footer>
+                <div class="ftr">
+                    <h2>Created by Xavercius</h2>
+                </div>
+            </footer>
+        </div>
     </body>
 
 </html>
