@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Task 1 Web Desihgn</title>
+
+        <style>
+            .navigation {
+                display: flex;
+                border: 2px solid #6b6b6b;
+                justify-content: flex-end;
+
+            }
+
+            .navigation .home,
+            .navigation .search
+            {
+                background-color:rgb(255, 230, 0);
+                border: 2px solid #ccc;
+                margin-top: 2px;
+                margin-bottom: 2px;
+                padding: 2px;
+                text-align:center;
+                flex: 1;
+                align-content: center;
+            }
+
+            .navigation .logout
+            {
+                background-color:rgb(255, 230, 0);
+                border: 2px solid #ccc;
+                margin-top: 2px;
+                margin-bottom: 2px;
+                margin-right: 2px;
+                padding: 2px;
+                text-align:center;
+                flex: 1;
+                align-content: center;
+            }
+
+            .pic {
+                display: flex;
+                flex: 9;
+                margin: 5px;
+                padding: 2px;
+                align-content: center;
+            }
+
+            main {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .forms,
+            .tbl {
+                display: flex;
+                flex: 1;
+                align-content: center;
+                justify-content: center;
+            }
+
+            .formcss {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .namacss {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: 5px;  
+            }
+
+            .namacss span {
+                margin-right: 10px;
+            }
+            label {
+                min-width: 100px; /* Adjust width as needed */
+            }
+
+            input[type="text"],
+            input[type="date"], 
+            textarea {
+                flex: 1;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <nav class="navigation">
+            <div class="pic">
+                <img src="img/image-removebg-preview - 2023-12-17T214554.796.png" alt="n3" width="40" height="20">
+            </div>
+            <div class="home">Home</div>
+            <div class="search">Search</div>
+            <div class="logout">Logout</div>
+        </nav>
+
+        <h1>Form Belajar</h1>
+        <p>Ini adalah website latihan pertama</p>
+
+        <main>
+            <div class="forms">
+                <form class="formcss">
+
+                    <div class="namacss">
+                        <label for="nama">Nama</label><span>:</span>
+                        <input type="text" id="nama">
+                    </div>
+
+                    <div class="namacss">
+                        <label for="ttl">Tanggal Lahir</label><span>:</span>
+                        <input type="date" id="ttl">
+                    </div>
+                    
+                    <div class="namacss">
+                        <label>Jenis Kelamin</label><span>:</span>
+                        <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki">
+                        <label for="laki-laki">Laki-laki</label>
+                        <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan">
+                        <label for="perempuan">Perempuan</label>
+                    </div>  
+
+                    <div class="namacss">
+                        <label for="why">Saran</label><span>:</span>
+                        <textarea id="why" rows="8" cols="64"></textarea>
+                    </div>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <div class="tbl">
+                <p>table</p>
+            </div>
+        </main>
+
+        <footer>
+
+        </footer>
+    </body>
+
+</html>

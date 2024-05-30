@@ -1,83 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Submitted Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Belajar</title>
     <style>
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 20px auto;
+        body {
+            font-family: Arial, sans-serif;
         }
-
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            flex: 0 0 150px;
+        }
+        .form-group span {
+            margin-right: 10px;
+        }
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            flex: 1;
             padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-
-        th {
-            background-color: #f2f2f2;
+        input[type="radio"] {
+            margin-left: 10px;
+            margin-right: 5px;
         }
-
-        .delete-btn {
-            background-color: #f44336;
+        textarea {
+            height: 100px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
-    <h1 style="text-align:center">Submitted Data</h1>
-
-    <table id="data-table">
-        <tr>
-            <th>Nama</th>
-            <th>Tempat Lahir</th>
-            <th>Jenis Kelamin</th>
-            <th>Saran</th>
-            <th>Action</th> <!-- Added table header for the delete button -->
-        </tr>
-        <!-- Data will be populated here -->
-    </table>
-
-    <script>
-        // Retrieve form data array from localStorage
-        var formDataArray = JSON.parse(localStorage.getItem("formData")) || [];
-
-        // Function to delete a row and update localStorage
-        function deleteRow(index) {
-            formDataArray.splice(index, 1);
-            localStorage.setItem("formData", JSON.stringify(formDataArray));
-            displayData();
-        }
-
-        // Function to display data in the table
-        function displayData() {
-            var table = document.getElementById("data-table");
-            table.innerHTML = "<tr><th>Nama</th><th>Tempat Lahir</th><th>Jenis Kelamin</th><th>Saran</th><th>Action</th></tr>"; // Add header row
-
-            // Loop through the array and populate the table
-            formDataArray.forEach(function(formData, index) {
-                var row = table.insertRow();
-                row.insertCell(0).textContent = formData.nama;
-                row.insertCell(1).textContent = formData.ttl;
-                row.insertCell(2).textContent = formData.jenisKelamin;
-                row.insertCell(3).textContent = formData.saran;
-                var deleteCell = row.insertCell(4);
-                var deleteButton = document.createElement("button");
-                deleteButton.textContent = "Delete";
-                deleteButton.className = "delete-btn";
-                deleteButton.onclick = function() {
-                    deleteRow(index);
-                };
-                deleteCell.appendChild(deleteButton);
-            });
-        }
-
-        // Display initial data
-        displayData();
-    </script>
+    <h1>Form Belajar</h1>
+    <p style="text-align: center;">Ini adalah website latihan pertama</p>
+    <form>
+        <div class="form-group">
+            <label for="name">Nama</label><span>:</span>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="dob">Tanggal Lahir</label><span>:</span>
+            <input type="date" id="dob" name="dob" value="2023-04-02">
+        </div>
+        <div class="form-group">
+            <label>Jenis Kelamin</label><span>:</span>
+            <input type="radio" id="male" name="gender" value="Laki-Laki">
+            <label for="male">Laki-Laki</label>
+            <input type="radio" id="female" name="gender" value="Perempuan">
+            <label for="female">Perempuan</label>
+        </div>
+        <div class="form-group">
+            <label for="message">Pesan</label><span>:</span>
+            <textarea id="message" name="message"></textarea>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
