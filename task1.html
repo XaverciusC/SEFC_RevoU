@@ -13,6 +13,60 @@
                 flex-direction: column;
                 font-family: Arial, sans-serif;
             }
+            main {
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+            }
+
+            label {
+                min-width: 100px; /* Adjust width as needed */
+            }
+
+            input[type="text"],
+            input[type="date"], 
+            textarea {
+                flex: 1;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            input[type="submit"] {
+                background-color: rgb(255, 230, 0);
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: rgb(179, 161, 0);
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                height: 50%;
+                margin: 0px 20px 20px 20px; 
+                align-self: flex-start;
+            }
+
+            th, td {
+                border: 1px solid #dddddd;
+                text-align: center;
+                padding: 8px;
+            }
+
+            th {
+                background-color: rgb(255, 230, 0);
+            }
+
+            footer {
+                background:linear-gradient(90deg,grey,rgb(255, 230, 0));
+                color: rgb(0, 0, 0);
+                text-align: right;
+                border: 2px solid #6b6b6b;
+                margin: 2px;
+            }
+
 
             .navigation {
                 display: flex;
@@ -55,14 +109,7 @@
                 align-content: center;
             }
 
-            main {
-                flex: 1;
-                display: flex;
-                flex-direction: row;
-            }
-
-            .forms,
-            .tbl {
+            .forms, .tbl {
                 display: flex;
                 flex: 1;
                 align-content: center;
@@ -84,35 +131,6 @@
             .namacss span {
                 margin-right: 10px;
             }
-            label {
-                min-width: 100px; /* Adjust width as needed */
-            }
-
-            input[type="text"],
-            input[type="date"], 
-            textarea {
-                flex: 1;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 3px;
-            }
-
-            input[type="submit"] {
-                background-color: rgb(255, 230, 0);
-                color: rgb(0, 0, 0);
-                cursor: pointer;
-            }
-            input[type="submit"]:hover {
-                background-color: rgb(179, 161, 0);
-            }
-
-            footer {
-                background:linear-gradient(90deg,grey,rgb(255, 230, 0));
-                color: rgb(0, 0, 0);
-                text-align: right;
-                border: 2px solid #6b6b6b;
-                margin: 2px;
-            }
 
             .ftr {
                 margin-right:20px;
@@ -123,6 +141,7 @@
                 flex-direction: column;
                 min-height: 100vh;
             }
+
         </style>
 
     </head>
@@ -173,7 +192,57 @@
                 </div>
 
                 <div class="tbl">
-                    <p>table</p>
+                    <table>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Tempat Lahir</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Saran</th>
+                            <th>Action</th> 
+                        </tr>
+                        <tr>
+                            <td>Cezar</td>
+                            <td>Buntok</td>
+                            <td>Laki-Laki</td>
+                            <td>Lesugo</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Cezar</td>
+                            <td>Buntok</td>
+                            <td>Laki-Laki</td>
+                            <td>Lesugo</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Cezar</td>
+                            <td>Buntok</td>
+                            <td>Laki-Laki</td>
+                            <td>Lesugo</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Cezar</td>
+                            <td>Buntok</td>
+                            <td>Laki-Laki</td>
+                            <td>Lesugo</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Cezar</td>
+                            <td>Buntok</td>
+                            <td>Laki-Laki</td>
+                            <td>Lesugo</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Cezar</td>
+                            <td>Buntok</td>
+                            <td>Laki-Laki</td>
+                            <td>Lesugo</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
                 </div>
             </main>
 
